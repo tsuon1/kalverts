@@ -1,13 +1,18 @@
 // KALVERTS HOMEPAGE - JavaScript
-// Mobilmeny + reveal fallback + extra responsiv CSS ner till 320px.
+// Logo, favicon, mobilmeny, CTA-text och responsiv fallback.
 
-const responsiveFix = document.createElement("style");
-responsiveFix.textContent = `
+const siteFix = document.createElement("style");
+siteFix.textContent = `
+  .logo { display: inline-flex; align-items: center; width: 135px; height: auto; }
+  .logo img { display: block; width: 135px; height: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+
   @media (max-width: 420px) {
     .container { width: min(100% - 24px, var(--max)); }
     .site-header .container { width: min(100% - 20px, var(--max)); }
     .header-inner { padding: 12px 0; }
-    .logo { font-size: 16px; }
+    .logo { width: 112px; }
+    .logo img { width: 112px; }
     .mobile-menu-button { padding: 9px 11px; font-size: 16px; }
     .hero { padding: 112px 0 56px; }
     .hero-grid { gap: 32px; }
@@ -49,6 +54,7 @@ responsiveFix.textContent = `
     .footer-inner { padding: 22px; border-radius: 24px; }
     .footer-links { gap: 10px; font-size: 9px; letter-spacing: .12em; }
   }
+
   @media (max-width: 340px) {
     .container { width: min(100% - 20px, var(--max)); }
     .hero h1 { font-size: 42px; }
@@ -62,7 +68,24 @@ responsiveFix.textContent = `
     .solution-shell, .offer-green, .offer-dark, .energy-shell, .about-white, .about-pink, .final-cta { padding: 20px; }
   }
 `;
-document.head.appendChild(responsiveFix);
+document.head.appendChild(siteFix);
+
+const favicon = document.createElement("link");
+favicon.rel = "icon";
+favicon.type = "image/svg+xml";
+favicon.href = "assets/favicon.svg";
+document.head.appendChild(favicon);
+
+const appleIcon = document.createElement("link");
+appleIcon.rel = "apple-touch-icon";
+appleIcon.href = "assets/favicon.svg";
+document.head.appendChild(appleIcon);
+
+const logo = document.querySelector(".logo");
+if (logo) {
+  logo.innerHTML = '<img src="assets/kalverts-logo.svg" alt="Kalverts" />';
+  logo.setAttribute("aria-label", "Kalverts");
+}
 
 function normalizeConsultationButtons() {
   document.querySelectorAll("a.btn").forEach((button) => {
@@ -77,7 +100,6 @@ function normalizeConsultationButtons() {
     }
   });
 }
-
 normalizeConsultationButtons();
 
 const menuButton = document.querySelector("#menuButton");
@@ -103,19 +125,3 @@ mobileLinks.forEach((link) => {
 
 const revealElements = document.querySelectorAll(".reveal");
 revealElements.forEach((element) => element.classList.add("is-visible"));
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.05 }
-  );
-
-  revealElements.forEach((element) => observer.observe(element));
-}
