@@ -3,13 +3,13 @@
 
 const fontLink = document.createElement("link");
 fontLink.rel = "stylesheet";
-fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap";
+fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@600;700;800;900&display=swap";
 document.head.appendChild(fontLink);
 
 const typographyFix = document.createElement("style");
 typographyFix.textContent = `
   :root {
-    --font-heading: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-heading: "Inter Tight", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
@@ -51,18 +51,21 @@ typographyFix.textContent = `
   .about-statement,
   .footer-logo {
     font-family: var(--font-heading) !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.055em;
+    font-weight: 900 !important;
+    letter-spacing: -0.075em;
+    color: #0f0e18;
   }
 
   .hero h1 {
-    font-size: clamp(68px, 8.8vw, 132px);
-    line-height: 0.86;
+    font-size: clamp(70px, 9vw, 136px);
+    line-height: 0.82;
+    letter-spacing: -0.085em;
   }
 
   .headline {
-    font-size: clamp(48px, 5.8vw, 84px);
-    line-height: 0.9;
+    font-size: clamp(50px, 6vw, 88px);
+    line-height: 0.84;
+    letter-spacing: -0.08em;
   }
 
   h3,
@@ -71,30 +74,34 @@ typographyFix.textContent = `
   .service-card h3,
   .case-card h3,
   .process-card h3 {
-    font-size: clamp(28px, 2.2vw, 36px);
-    line-height: 0.98;
-    letter-spacing: -0.05em;
+    font-size: clamp(28px, 2.25vw, 36px);
+    line-height: 0.92;
+    letter-spacing: -0.072em;
   }
 
   .outcome-heading {
-    font-size: clamp(40px, 4.7vw, 70px);
-    line-height: 0.9;
+    font-size: clamp(42px, 4.8vw, 72px);
+    line-height: 0.86;
+    letter-spacing: -0.078em;
   }
 
   .strategy-box h2 {
-    font-size: clamp(35px, 3.7vw, 54px);
-    line-height: 0.92;
+    font-size: clamp(36px, 3.8vw, 56px);
+    line-height: 0.88;
+    letter-spacing: -0.075em;
   }
 
   .offer-intro {
-    font-size: clamp(28px, 2.5vw, 40px) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(28px, 2.6vw, 42px) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.072em;
   }
 
   .offer-punchline,
   .about-statement {
-    font-size: clamp(25px, 2.2vw, 34px) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(25px, 2.2vw, 35px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.07em;
   }
 
   .lead,
@@ -117,25 +124,25 @@ typographyFix.textContent = `
   .footer-links,
   .section-label,
   .btn {
-    font-weight: 800 !important;
+    font-weight: 850 !important;
   }
 
   @media (max-width: 760px) {
-    .hero h1 { font-size: clamp(50px, 15vw, 78px); }
-    .headline { font-size: clamp(40px, 12vw, 58px); }
-    .outcome-heading { font-size: clamp(36px, 11vw, 54px); }
+    .hero h1 { font-size: clamp(52px, 15vw, 80px); }
+    .headline { font-size: clamp(41px, 12vw, 60px); }
+    .outcome-heading { font-size: clamp(37px, 11vw, 55px); }
   }
 
   @media (max-width: 420px) {
-    .hero h1 { font-size: clamp(44px, 14.8vw, 62px); }
-    .headline { font-size: clamp(35px, 11.5vw, 50px); }
+    .hero h1 { font-size: clamp(45px, 14.8vw, 64px); }
+    .headline { font-size: clamp(36px, 11.5vw, 51px); }
     h3,
     .card h3,
     .solution-card h3,
     .service-card h3,
     .case-card h3,
-    .process-card h3 { font-size: 26px; }
-    .outcome-heading { font-size: clamp(32px, 11vw, 46px); }
+    .process-card h3 { font-size: 27px; }
+    .outcome-heading { font-size: clamp(33px, 11vw, 47px); }
   }
 `;
 document.head.appendChild(typographyFix);
@@ -147,7 +154,7 @@ siteFix.textContent = `
   .reveal { opacity: 1 !important; transform: none !important; }
   .outcome-heading {
     margin: 58px 0 10px;
-    font-family: var(--font-heading, "Space Grotesk", "Inter", sans-serif);
+    font-family: var(--font-heading, "Inter Tight", "Inter", sans-serif);
     font-size: clamp(34px, 4vw, 58px);
     line-height: .95;
     letter-spacing: -.035em;
