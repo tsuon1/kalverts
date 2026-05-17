@@ -1,11 +1,6 @@
 // KALVERTS HOMEPAGE - JavaScript
 // Logo, favicon, mobilmeny, CTA-text, font och responsiv fallback.
 
-const robotoFont = document.createElement("link");
-robotoFont.rel = "stylesheet";
-robotoFont.href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap";
-document.head.appendChild(robotoFont);
-
 const siteFix = document.createElement("style");
 siteFix.textContent = `
   *,
@@ -35,7 +30,7 @@ siteFix.textContent = `
   .footer-logo,
   .footer-links,
   .tag {
-    font-family: "Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   }
 
   .logo { display: inline-flex; align-items: center; width: 135px; height: auto; }
