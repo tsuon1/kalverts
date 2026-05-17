@@ -1,8 +1,38 @@
 // KALVERTS HOMEPAGE - JavaScript
-// Logo, favicon, mobilmeny, CTA-text och responsiv fallback.
+// Logo, favicon, mobilmeny, CTA-text, font och responsiv fallback.
 
 const siteFix = document.createElement("style");
 siteFix.textContent = `
+  *,
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  nav,
+  a,
+  button,
+  input,
+  textarea,
+  .logo,
+  .nav,
+  .btn,
+  .section-label,
+  .headline,
+  .lead,
+  .body-text,
+  .hero-subtitle,
+  .hero-support,
+  .strategy-box h2,
+  .offer-intro,
+  .offer-punchline,
+  .about-statement,
+  .footer-logo,
+  .footer-links,
+  .tag {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  }
+
   .logo { display: inline-flex; align-items: center; width: 135px; height: auto; }
   .logo img { display: block; width: 135px; height: auto; }
   .reveal { opacity: 1 !important; transform: none !important; }
