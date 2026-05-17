@@ -3,13 +3,13 @@
 
 const fontLink = document.createElement("link");
 fontLink.rel = "stylesheet";
-fontLink.href = "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800;900&display=swap";
+fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap";
 document.head.appendChild(fontLink);
 
 const typographyFix = document.createElement("style");
 typographyFix.textContent = `
   :root {
-    --font-heading: "Recoleta", "Fraunces", "DM Serif Display", "Lora", Georgia, serif;
+    --font-heading: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
@@ -51,18 +51,18 @@ typographyFix.textContent = `
   .about-statement,
   .footer-logo {
     font-family: var(--font-heading) !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.04em;
+    font-weight: 700 !important;
+    letter-spacing: -0.055em;
   }
 
   .hero h1 {
-    font-size: clamp(66px, 8.8vw, 128px);
-    line-height: 0.88;
+    font-size: clamp(68px, 8.8vw, 132px);
+    line-height: 0.86;
   }
 
   .headline {
-    font-size: clamp(46px, 5.6vw, 80px);
-    line-height: 0.94;
+    font-size: clamp(48px, 5.8vw, 84px);
+    line-height: 0.9;
   }
 
   h3,
@@ -71,34 +71,35 @@ typographyFix.textContent = `
   .service-card h3,
   .case-card h3,
   .process-card h3 {
-    font-size: clamp(27px, 2.2vw, 34px);
-    line-height: 1.02;
+    font-size: clamp(28px, 2.2vw, 36px);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
   }
 
   .outcome-heading {
-    font-size: clamp(38px, 4.5vw, 66px);
-    line-height: 0.94;
+    font-size: clamp(40px, 4.7vw, 70px);
+    line-height: 0.9;
   }
 
   .strategy-box h2 {
-    font-size: clamp(34px, 3.6vw, 52px);
-    line-height: 0.96;
+    font-size: clamp(35px, 3.7vw, 54px);
+    line-height: 0.92;
   }
 
   .offer-intro {
-    font-size: clamp(27px, 2.5vw, 38px) !important;
-    line-height: 1.12 !important;
+    font-size: clamp(28px, 2.5vw, 40px) !important;
+    line-height: 1.05 !important;
   }
 
   .offer-punchline,
   .about-statement {
     font-size: clamp(25px, 2.2vw, 34px) !important;
-    line-height: 1.08 !important;
+    line-height: 1.05 !important;
   }
 
   .lead,
   .hero-subtitle {
-    line-height: 1.68;
+    line-height: 1.66;
   }
 
   .body-text,
@@ -112,22 +113,29 @@ typographyFix.textContent = `
     line-height: 1.72;
   }
 
+  .nav,
+  .footer-links,
+  .section-label,
+  .btn {
+    font-weight: 800 !important;
+  }
+
   @media (max-width: 760px) {
-    .hero h1 { font-size: clamp(48px, 15vw, 76px); }
-    .headline { font-size: clamp(39px, 12vw, 56px); }
-    .outcome-heading { font-size: clamp(36px, 11vw, 52px); }
+    .hero h1 { font-size: clamp(50px, 15vw, 78px); }
+    .headline { font-size: clamp(40px, 12vw, 58px); }
+    .outcome-heading { font-size: clamp(36px, 11vw, 54px); }
   }
 
   @media (max-width: 420px) {
-    .hero h1 { font-size: clamp(43px, 14.8vw, 60px); }
-    .headline { font-size: clamp(34px, 11.5vw, 48px); }
+    .hero h1 { font-size: clamp(44px, 14.8vw, 62px); }
+    .headline { font-size: clamp(35px, 11.5vw, 50px); }
     h3,
     .card h3,
     .solution-card h3,
     .service-card h3,
     .case-card h3,
-    .process-card h3 { font-size: 25px; }
-    .outcome-heading { font-size: clamp(32px, 11vw, 45px); }
+    .process-card h3 { font-size: 26px; }
+    .outcome-heading { font-size: clamp(32px, 11vw, 46px); }
   }
 `;
 document.head.appendChild(typographyFix);
@@ -139,7 +147,7 @@ siteFix.textContent = `
   .reveal { opacity: 1 !important; transform: none !important; }
   .outcome-heading {
     margin: 58px 0 10px;
-    font-family: var(--font-heading, 'Fraunces', Georgia, serif);
+    font-family: var(--font-heading, "Space Grotesk", "Inter", sans-serif);
     font-size: clamp(34px, 4vw, 58px);
     line-height: .95;
     letter-spacing: -.035em;
