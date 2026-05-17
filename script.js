@@ -1,5 +1,136 @@
 // KALVERTS HOMEPAGE - JavaScript
-// Logo, favicon, mobilmeny, CTA-text och responsiv fallback.
+// Logo, favicon, mobilmeny, CTA-text, typografi och responsiv fallback.
+
+const fontLink = document.createElement("link");
+fontLink.rel = "stylesheet";
+fontLink.href = "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800;900&display=swap";
+document.head.appendChild(fontLink);
+
+const typographyFix = document.createElement("style");
+typographyFix.textContent = `
+  :root {
+    --font-heading: "Recoleta", "Fraunces", "DM Serif Display", "Lora", Georgia, serif;
+    --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  body,
+  p,
+  nav,
+  button,
+  input,
+  textarea,
+  .ui-text,
+  .btn,
+  .section-label,
+  .tag,
+  .nav,
+  .mobile-menu,
+  .footer-links,
+  .lead,
+  .body-text,
+  .hero-subtitle,
+  .hero-support,
+  .offer-body,
+  .offer-points,
+  .case-link,
+  .footer-subtitle,
+  .mini-card span,
+  .strategy-box p {
+    font-family: var(--font-body) !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  .heading,
+  .headline,
+  .outcome-heading,
+  .strategy-box h2,
+  .offer-intro,
+  .offer-punchline,
+  .about-statement,
+  .footer-logo {
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.04em;
+  }
+
+  .hero h1 {
+    font-size: clamp(66px, 8.8vw, 128px);
+    line-height: 0.88;
+  }
+
+  .headline {
+    font-size: clamp(46px, 5.6vw, 80px);
+    line-height: 0.94;
+  }
+
+  h3,
+  .card h3,
+  .solution-card h3,
+  .service-card h3,
+  .case-card h3,
+  .process-card h3 {
+    font-size: clamp(27px, 2.2vw, 34px);
+    line-height: 1.02;
+  }
+
+  .outcome-heading {
+    font-size: clamp(38px, 4.5vw, 66px);
+    line-height: 0.94;
+  }
+
+  .strategy-box h2 {
+    font-size: clamp(34px, 3.6vw, 52px);
+    line-height: 0.96;
+  }
+
+  .offer-intro {
+    font-size: clamp(27px, 2.5vw, 38px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .offer-punchline,
+  .about-statement {
+    font-size: clamp(25px, 2.2vw, 34px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .lead,
+  .hero-subtitle {
+    line-height: 1.68;
+  }
+
+  .body-text,
+  .hero-support,
+  .offer-body,
+  .card p,
+  .solution-card p,
+  .service-card p,
+  .case-card p,
+  .process-card p {
+    line-height: 1.72;
+  }
+
+  @media (max-width: 760px) {
+    .hero h1 { font-size: clamp(48px, 15vw, 76px); }
+    .headline { font-size: clamp(39px, 12vw, 56px); }
+    .outcome-heading { font-size: clamp(36px, 11vw, 52px); }
+  }
+
+  @media (max-width: 420px) {
+    .hero h1 { font-size: clamp(43px, 14.8vw, 60px); }
+    .headline { font-size: clamp(34px, 11.5vw, 48px); }
+    h3,
+    .card h3,
+    .solution-card h3,
+    .service-card h3,
+    .case-card h3,
+    .process-card h3 { font-size: 25px; }
+    .outcome-heading { font-size: clamp(32px, 11vw, 45px); }
+  }
+`;
+document.head.appendChild(typographyFix);
 
 const siteFix = document.createElement("style");
 siteFix.textContent = `
@@ -8,7 +139,7 @@ siteFix.textContent = `
   .reveal { opacity: 1 !important; transform: none !important; }
   .outcome-heading {
     margin: 58px 0 10px;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: var(--font-heading, 'Fraunces', Georgia, serif);
     font-size: clamp(34px, 4vw, 58px);
     line-height: .95;
     letter-spacing: -.035em;
