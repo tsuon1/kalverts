@@ -1,5 +1,107 @@
 // KALVERTS HOMEPAGE - JavaScript
-// Logo, favicon, mobilmeny, CTA-text, font och responsiv fallback.
+// Logo, favicon, mobilmeny, CTA-text, font, färger och responsiv fallback.
+
+const colorFix = document.createElement("style");
+colorFix.textContent = `
+  :root {
+    --bg: #FAF7F2;
+    --dark: #0B1F3A;
+    --purple: #132B50;
+    --text-soft: #233954;
+    --text-muted: #6B7280;
+    --green: #F6C453;
+    --orange: #F97316;
+    --blue: #DCE8F7;
+    --pink: #FFE4D5;
+    --light-pink: #F2EEE7;
+    --white: #FFFFFF;
+    --border: rgba(11, 31, 58, 0.12);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 8% 8%, rgba(246,196,83,.18), transparent 26rem),
+      radial-gradient(circle at 92% 12%, rgba(249,115,22,.10), transparent 25rem),
+      var(--bg) !important;
+    color: var(--dark) !important;
+  }
+
+  .site-header {
+    background: rgba(250, 247, 242, 0.86) !important;
+    border-bottom-color: rgba(11, 31, 58, 0.10) !important;
+  }
+
+  .btn-primary,
+  .number-badge,
+  .hero-card-outer,
+  .graphic-line,
+  .energy-shell,
+  .cta-box {
+    background: var(--dark) !important;
+  }
+
+  .btn-primary:hover {
+    background: var(--purple) !important;
+  }
+
+  .strategy-box,
+  .offer-green,
+  .service-card.green,
+  .final-cta {
+    background: var(--green) !important;
+  }
+
+  .mini-card.orange,
+  .btn-orange,
+  .service-card.orange,
+  .case-visual.orange,
+  .dot-orange {
+    background: var(--orange) !important;
+  }
+
+  .service-card.blue,
+  .case-visual.blue,
+  .dot-blue {
+    background: var(--blue) !important;
+  }
+
+  .service-card.pink,
+  .case-visual.pink,
+  .about-pink {
+    background: var(--pink) !important;
+  }
+
+  .mini-card.dark,
+  .offer-dark {
+    background: var(--purple) !important;
+  }
+
+  .dot-green {
+    background: var(--green) !important;
+  }
+
+  .process-number {
+    color: #6FA3E8 !important;
+  }
+
+  .blob-green {
+    background: rgba(246, 196, 83, 0.48) !important;
+  }
+
+  .blob-blue {
+    background: rgba(220, 232, 247, 0.75) !important;
+  }
+
+  .blob-pink,
+  .energy-blob-pink {
+    background: rgba(249, 115, 22, 0.22) !important;
+  }
+
+  .energy-blob-green {
+    background: rgba(246, 196, 83, 0.18) !important;
+  }
+`;
+document.head.appendChild(colorFix);
 
 const siteFix = document.createElement("style");
 siteFix.textContent = `
