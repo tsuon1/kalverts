@@ -1,5 +1,24 @@
 // KALVERTS HOMEPAGE - JavaScript
-// Logo, favicon, mobilmeny, CTA-text, font, färger och responsiv fallback.
+// Logo, favicon, mobilmeny, CTA-text, font, färger, kontaktformulär och tracking placeholders.
+
+/* =========================================================
+   TRACKING PLACEHOLDERS
+   =========================================================
+   Lägg in riktiga ID:n när de finns:
+   - Google Tag Manager: GTM-XXXXXXX
+   - Google Analytics 4: G-XXXXXXXXXX
+   - Leadfeeder / Dealfront: lägg script via GTM eller här
+   - Hotjar: HOTJAR_ID
+
+   Rekommenderat: lägg GA4, Leadfeeder och Hotjar via Google Tag Manager.
+*/
+window.dataLayer = window.dataLayer || [];
+window.kalvertsTracking = {
+  gtmId: "GTM-XXXXXXX",
+  ga4Id: "G-XXXXXXXXXX",
+  leadfeeder: "LEADFEEDER_PLACEHOLDER",
+  hotjarId: "HOTJAR_ID"
+};
 
 const colorFix = document.createElement("style");
 colorFix.textContent = `
@@ -36,108 +55,78 @@ colorFix.textContent = `
   .hero-card-outer,
   .graphic-line,
   .energy-shell,
-  .cta-box {
-    background: var(--dark) !important;
-  }
-
-  .btn-primary:hover {
-    background: var(--purple) !important;
-  }
-
+  .cta-box { background: var(--dark) !important; }
+  .btn-primary:hover { background: var(--purple) !important; }
   .strategy-box,
   .offer-green,
   .service-card.green,
-  .final-cta {
-    background: var(--green) !important;
-  }
-
+  .final-cta { background: var(--green) !important; }
   .mini-card.orange,
   .btn-orange,
   .service-card.orange,
   .case-visual.orange,
-  .dot-orange {
-    background: var(--orange) !important;
-  }
-
+  .dot-orange { background: var(--orange) !important; }
   .service-card.blue,
   .case-visual.blue,
-  .dot-blue {
-    background: var(--blue) !important;
-  }
-
+  .dot-blue { background: var(--blue) !important; }
   .service-card.pink,
   .case-visual.pink,
-  .about-pink {
-    background: var(--pink) !important;
-  }
-
+  .about-pink { background: var(--pink) !important; }
   .mini-card.dark,
-  .offer-dark {
-    background: var(--purple) !important;
-  }
-
-  .dot-green {
-    background: var(--green) !important;
-  }
-
-  .process-number {
-    color: #6FA3E8 !important;
-  }
-
-  .blob-green {
-    background: rgba(246, 196, 83, 0.48) !important;
-  }
-
-  .blob-blue {
-    background: rgba(220, 232, 247, 0.75) !important;
-  }
-
+  .offer-dark { background: var(--purple) !important; }
+  .dot-green { background: var(--green) !important; }
+  .process-number { color: #6FA3E8 !important; }
+  .blob-green { background: rgba(246, 196, 83, 0.48) !important; }
+  .blob-blue { background: rgba(220, 232, 247, 0.75) !important; }
   .blob-pink,
-  .energy-blob-pink {
-    background: rgba(249, 115, 22, 0.22) !important;
-  }
-
-  .energy-blob-green {
-    background: rgba(246, 196, 83, 0.18) !important;
-  }
+  .energy-blob-pink { background: rgba(249, 115, 22, 0.22) !important; }
+  .energy-blob-green { background: rgba(246, 196, 83, 0.18) !important; }
 `;
 document.head.appendChild(colorFix);
 
 const siteFix = document.createElement("style");
 siteFix.textContent = `
-  *,
-  body,
-  h1,
-  h2,
-  h3,
-  p,
-  nav,
-  a,
-  button,
-  input,
-  textarea,
-  .logo,
-  .nav,
-  .btn,
-  .section-label,
-  .headline,
-  .lead,
-  .body-text,
-  .hero-subtitle,
-  .hero-support,
-  .strategy-box h2,
-  .offer-intro,
-  .offer-punchline,
-  .about-statement,
-  .footer-logo,
-  .footer-links,
-  .tag {
+  *, body, h1, h2, h3, p, nav, a, button, input, textarea, label, select,
+  .logo, .nav, .btn, .section-label, .headline, .lead, .body-text,
+  .hero-subtitle, .hero-support, .strategy-box h2, .offer-intro,
+  .offer-punchline, .about-statement, .footer-logo, .footer-links, .tag {
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   }
 
   .logo { display: inline-flex; align-items: center; width: 135px; height: auto; }
   .logo img { display: block; width: 135px; height: auto; }
   .reveal { opacity: 1 !important; transform: none !important; }
+
+  .contact-form { display: grid; gap: 14px; margin-top: 24px; }
+  .contact-field { display: grid; gap: 7px; }
+  .contact-field label {
+    color: rgba(255,255,255,.78);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .contact-field input,
+  .contact-field textarea {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 18px;
+    background: rgba(255,255,255,.10);
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.45;
+    outline: none;
+    padding: 15px 16px;
+  }
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder { color: rgba(255,255,255,.45); }
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    border-color: rgba(246,196,83,.85);
+    box-shadow: 0 0 0 3px rgba(246,196,83,.18);
+  }
+  .contact-form-note { color: rgba(255,255,255,.62); font-size: 13px; line-height: 1.5; }
+  .contact-submit { width: 100%; margin-top: 4px; border: 0; }
 
   @media (max-width: 420px) {
     .container { width: min(100% - 24px, var(--max)); }
@@ -240,18 +229,9 @@ function updateProblemCards() {
   if (!cards || cards.length < 3) return;
 
   const updated = [
-    {
-      title: "Tydligt budskap",
-      body: "Kunden förstår snabbt vad ni gör och varför det spelar roll."
-    },
-    {
-      title: "Starkt första intryck",
-      body: "Hemsidan speglar kvaliteten i företaget från första klicket."
-    },
-    {
-      title: "Tydlig vision",
-      body: "Besökaren ser vart ni är på väg och vad nästa steg är."
-    }
+    { title: "Tydligt budskap", body: "Kunden förstår snabbt vad ni gör och varför det spelar roll." },
+    { title: "Starkt första intryck", body: "Hemsidan speglar kvaliteten i företaget från första klicket." },
+    { title: "Tydlig vision", body: "Besökaren ser vart ni är på väg och vad nästa steg är." }
   ];
 
   cards.forEach((card, index) => {
@@ -262,6 +242,61 @@ function updateProblemCards() {
   });
 }
 updateProblemCards();
+
+function createContactForm() {
+  const box = document.querySelector("#kontakt .cta-box");
+  if (!box) return;
+
+  const recipient = "adrian@kalverts.se";
+
+  box.innerHTML = `
+    <h3>Kontakta oss</h3>
+    <p>Fyll i formuläret så skapas ett mejl direkt till oss.</p>
+    <form class="contact-form" id="contactForm" data-form="kalverts-contact">
+      <div class="contact-field">
+        <label for="contactName">Namn</label>
+        <input id="contactName" name="name" type="text" autocomplete="name" placeholder="Ditt namn" required />
+      </div>
+      <div class="contact-field">
+        <label for="contactEmail">Mejl</label>
+        <input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="din@mejl.se" required />
+      </div>
+      <div class="contact-field">
+        <label for="contactCompany">Företag</label>
+        <input id="contactCompany" name="company" type="text" autocomplete="organization" placeholder="Företagsnamn" />
+      </div>
+      <div class="contact-field">
+        <label for="contactMessage">Meddelande</label>
+        <textarea id="contactMessage" name="message" rows="5" placeholder="Berätta kort vad ni behöver hjälp med" required></textarea>
+      </div>
+      <p class="contact-form-note">Formuläret öppnar din mejlklient och skickas till ${recipient}.</p>
+      <button class="btn btn-white contact-submit" type="submit">Skicka förfrågan →</button>
+    </form>
+  `;
+
+  const form = document.querySelector("#contactForm");
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const company = String(formData.get("company") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    window.dataLayer.push({ event: "contact_form_submit", form_name: "kalverts_contact", company: company || undefined });
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", { event_category: "contact", event_label: "kalverts_contact_form" });
+    }
+
+    const subject = encodeURIComponent("Ny förfrågan från Kalverts.se");
+    const body = encodeURIComponent(`Namn: ${name}\nMejl: ${email}\nFöretag: ${company || "Ej angivet"}\n\nMeddelande:\n${message}`);
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  });
+}
+createContactForm();
 
 const menuButton = document.querySelector("#menuButton");
 const mobileMenu = document.querySelector("#mobileMenu");
