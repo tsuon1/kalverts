@@ -234,6 +234,35 @@ function normalizeConsultationButtons() {
 }
 normalizeConsultationButtons();
 
+function updateProblemCards() {
+  const section = document.querySelector("#hemsidor");
+  const cards = section?.querySelectorAll(".cards-3 .card");
+  if (!cards || cards.length < 3) return;
+
+  const updated = [
+    {
+      title: "Tydligt budskap",
+      body: "Kunden förstår snabbt vad ni gör och varför det spelar roll."
+    },
+    {
+      title: "Starkt första intryck",
+      body: "Hemsidan speglar kvaliteten i företaget från första klicket."
+    },
+    {
+      title: "Tydlig vision",
+      body: "Besökaren ser vart ni är på väg och vad nästa steg är."
+    }
+  ];
+
+  cards.forEach((card, index) => {
+    const heading = card.querySelector("h3");
+    const paragraph = card.querySelector("p");
+    if (heading) heading.textContent = updated[index].title;
+    if (paragraph) paragraph.textContent = updated[index].body;
+  });
+}
+updateProblemCards();
+
 const menuButton = document.querySelector("#menuButton");
 const mobileMenu = document.querySelector("#mobileMenu");
 const mobileLinks = document.querySelectorAll("#mobileMenu a");
